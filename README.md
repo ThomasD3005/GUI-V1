@@ -11,7 +11,7 @@ The ultimate GOAL is to create an appealing and efficient application that can d
 
 Future Features will include:
 - Secure Login & Registration
-- MySQL Database COnnection
+- MySQL Database Connection
 - Interactive Graph
 - Ability to compute:
   >Mean  | Standard Deviation | Slope | Linear Regression Models
