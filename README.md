@@ -16,3 +16,6 @@ Future Features will include:
 - Ability to compute:
   >Mean  | Standard Deviation | Slope | Linear Regression Models
   
+  To run this application:
+  -copy code into an IDE or save this as a .py script. 
+  -Run from terminal: "GUI_V1.py"
