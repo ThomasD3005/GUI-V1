@@ -1,0 +1,38 @@
+from PyQt5 import QtWidgets as qtw
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
+from matplotlib.figure import Figure
+import sys
+import matplotlib
+import pandas as pd
+matplotlib.use('Qt5Agg')
+
+sample_data = [12,14,16,20,22]
+sample_data2 = [13,16,19,22,28]
+
+class graph_creator(FigureCanvasQTAgg):
+    def __init__(self,parent= None, width=5, height=4, dpi=100):
+        fig = Figure(figsize=(width, height), dpi=dpi)
+        self.axes = fig.add_subplot(1, 1, 1)
+        super(graph_creator, self).__init__(fig)
+
+class MainWindow(qtw.QMainWindow):
+    def __init__(self, *args, **kwargs):
+        super(MainWindow, self).__init__()
+
+        g_creator = graph_creator(self, width=5, height=4, dpi=100)
+        g_creator.axes.plot(sample_data, sample_data2)
+
+        self.central_widget = qtw.QWidget()
+        self.setCentralWidget(self.central_widget)
+        layout1 = qtw.QVBoxLayout()
+
+        self.central_widget.setLayout(layout1)
+
+        layout1.addWidget(g_creator)
+
+        self.show()
+
+
+app = qtw.QApplication(sys.argv)
+w = MainWindow()
+app.exec_()
